@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(175deg, #1F1BBE, #1571F2);
+}
+
+header {
+    width: 100%;
+    background-color: #6356FE;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.3s, padding 0.3s, height 0.3s;
+    z-index: 1000;
+    background-image: linear-gradient(135deg, #1571F2, #1F1BBE);
+}
+
+header.shrink {
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header.shrink h1 {
+    font-size: 20px;
+}
+
+header h1 {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-size: 24px;
+    transition: font-size 0.3s;
+}
+
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.menu-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.menu-container input {
+    padding: 9px;
+    margin-bottom: 10px;
+    width: 140px;
+    border: 1px solid #1061BD;
+    border-radius: 8px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: ghostwhite;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    position: relative;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Transiciones para suavizar cambios */
+}
+
+.card img.fade-out {
+    opacity: 0; /* Opacidad inicial cuando se aplica la clase fade-out */
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.card p {
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 1px;
+    color: black;
+    transition: opacity 0.5s ease;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+}
+
+.card a {
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card a:hover {
+    background-color: #0056b3;
+}
+
+.search-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px; /* Ajusta la posición según sea necesario */
+    cursor: pointer; 
+    z-index: 1100;
+    transition: top 0.3s, right 0.3s;
+}
+
+.search-icon img {
+    width: 30px; /* Ajusta el tamaño del icono según sea necesario */
+    transition: width 0.3s;
+}
+
+header.shrink .search-icon {
+    top: 10px; /* Ajusta la posición cuando la barra de navegación se encoge */
+    right: 30px; /* Ajusta la posición cuando la barra de navegación se encoge */
+}
+
+header.shrink .search-icon img {
+    width: 20px; /* Ajusta el tamaño del ícono de búsqueda cuando la barra de navegación se encoge */
+}
+
+/*prueba*/
