@@ -59,14 +59,20 @@ function alternateImages() {
         const filteredSrc = img.dataset.filtered;
         let isFiltered = true;
 
+        // Preload images
+        const originalImage = new Image();
+        const filteredImage = new Image();
+        originalImage.src = originalSrc;
+        filteredImage.src = filteredSrc;
+
         img.addEventListener('click', function() {
-            img.style.opacity = 0;
+            img.style.opacity = 0.5; // Reduce the opacity immediately
             setTimeout(() => {
                 img.src = isFiltered ? originalSrc : filteredSrc;
                 status.textContent = isFiltered ? 'Original' : 'Preset';
                 img.style.opacity = 1;
                 isFiltered = !isFiltered;
-            }, 500);
+            }, 200); // Reduce the transition time
         });
     });
 }
@@ -96,4 +102,4 @@ function filterCards() {
     });
 }
 
-/*prueba*/
+/*script mejorado*/
